@@ -1,20 +1,51 @@
 <% layout('/layouts/boilerplate') -%>
 <body>
+    <div class="row mt-3">
+    <div class="col-8 offset-2">
+        <br><br>
     <h3>Create new listing</h3>
-    <form method="POST" action="/listings">
-        <input name="listing[title]" placeholder="Enter title" type="text" />
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+    <div>
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="Enter title" type="text" class="form-control" required />
+        <div class="valid-feedback">title looks good!</div>
+    </div>
+        <br>
+    <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]"  class="form-control" required></textarea>
+         <div class="invalid-feedback">Description is required!</div>
+    </div>
+        <br>
+    <div>
+        <label for="image" class="form-label">Image Link</label>
+        <input name="listing[image]" placeholder="enter url/link" type="text" class="form-control" />
+    </div>
+        <br>
+    <div class="row">
+    <div class="col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input name="listing[price]" placeholder="enter price" type="number" class="form-control" required />
+        <div class="invalid-feedback">Price is required!</div>
+    </div>
+        <br>
+    <div class="col-md-8">
+        <label for="country" class="form-label">Country</label>
+        <input name="listing[country]" placeholder="enter country" type="text" class="form-control" required />
+        <div class="invalid-feedback">country name is required!</div>
+    </div>
+    </div>
+        <br>
+    <div>
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" placeholder="enter location" type="text" class="form-control" required />
+        <div class="invalid-feedback">Location is required!</div>
+    </div>
         <br><br>
-        <textarea name="listing[description]" placeholder="enter description"></textarea>
+        <button class="btn btn-dark add-btn">NEW</button>
         <br><br>
-        <input name="listing[image]" placeholder="enter url/link" type="text" />
-        <br><br>
-        <input name="listing[price]" placeholder="enter price" type="number" />
-        <br><br>
-        <input name="listing[country]" placeholder="enter country" type="text" />
-        <br><br>
-        <input name="listing[location]" placeholder="enter location" type="text" />
-        <br><br>
-        <button>NEW</button>
     </form>
+    </div>
+    </div>
 
 </body>
